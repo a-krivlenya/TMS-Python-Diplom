@@ -13,6 +13,10 @@ User = get_user_model()
 
 
 def all_staff(request):
+    """
+    Отображает все доступные товары, случайно отсортированные, и категории.
+    Учитывает выбранный пол, если он указан в сессии.
+    """
     items = Item.objects.filter(is_sold=False)
     categories = Category.objects.all()
 
@@ -40,6 +44,9 @@ def all_staff(request):
 
 
 def index(request):
+    """
+    Отображает главную страницу с товарами и категориями.
+    """
     items = Item.objects.filter(is_sold=False)
     categories = Category.objects.all()
 
@@ -66,6 +73,9 @@ def index(request):
 
 
 def category(request, category_id):
+    """
+    Показывает товары в указанной категории.
+    """
     category = get_object_or_404(Category, pk=category_id)
     items = Item.objects.filter(category=category)
     categories = Category.objects.all()
@@ -94,11 +104,18 @@ def category(request, category_id):
 
 
 def log_out(request):
+    """
+    Выходит из системы и перенаправляет пользователя на главную страницу.
+    """
     logout(request)
     return redirect("/")
 
 
 def signup(request):
+    """
+    Обрабатывает регистрацию нового пользователя, проверяет уникальность email и
+    выполняет вход в систему после успешной регистрации.
+    """
     if request.method == "POST":
         form = SignupForm(request.POST)
 
