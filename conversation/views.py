@@ -10,6 +10,11 @@ from .models import Conversation
 
 @login_required
 def new_conversation(request, item_pk):
+    """
+    Создает новый разговор для обсуждения товара.
+    Если разговор уже существует, перенаправляет на его страницу.
+    Обрабатывает отправку сообщений через форму.
+    """
     item = get_object_or_404(Item, pk=item_pk)
     admin = User.objects.get(username="admin")
     if admin == request.user:
@@ -47,6 +52,10 @@ def new_conversation(request, item_pk):
 
 @login_required
 def inbox(request):
+    """
+    Отображает список разговоров, в которых участвует текущий пользователь.
+    Предоставляет пользователю доступ к его сообщениям.
+    """
     conversations = Conversation.objects.filter(members__in=[request.user.id])
 
     return render(
@@ -58,6 +67,10 @@ def inbox(request):
 
 @login_required
 def detail(request, pk):
+    """
+    Показывает детали конкретного разговора.
+    Позволяет пользователю отправлять новые сообщения и обновлять информацию о разговоре.
+    """
     conversation = Conversation.objects.filter(members__in=[request.user.id]).get(pk=pk)
 
     if request.method == "POST":
