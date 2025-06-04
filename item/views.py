@@ -27,6 +27,9 @@ def detail(
     js_op=None,
     pisya=None,
 ):
+    """
+    Отображает детали конкретного товара и связанные товары.
+    """
     item = get_object_or_404(Item, pk=pk)
     related_items = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)
 
@@ -86,6 +89,9 @@ def detail(
 
 
 def items(request):
+    """
+    Отображает список товаров, отфильтрованных по запросу и полу.
+    """
     query = request.GET.get("query", "")
     categories = Category.objects.all()
     items = Item.objects.filter(is_sold=False)
@@ -122,6 +128,9 @@ def items(request):
 
 @login_required
 def add(request, pk):
+    """
+    Добавляет товар в корзину пользователя.
+    """
     item = get_object_or_404(Item, pk=pk)
     request.user.items.add(item)
     return detail(request, pk=pk, operation="add", js_op="fgkjsdflkgjdkslfg")
@@ -129,6 +138,9 @@ def add(request, pk):
 
 @login_required
 def basket(request, message=None):
+    """
+    Отображает корзину пользователя с товарами и покупками.
+    """
     items = request.user.items.all()
     purchases = Purchase.objects.filter(user=request.user)
 
@@ -146,6 +158,9 @@ def basket(request, message=None):
 
 @login_required
 def remove(request, pk):
+    """
+    Удаляет товар из корзины пользователя.
+    """
     item = get_object_or_404(Item, pk=pk)
     request.user.items.remove(item)
     return redirect("item:basket")
@@ -153,12 +168,18 @@ def remove(request, pk):
 
 @login_required
 def remove_detail(request, pk):
+    """
+    Удаляет товар из корзины пользователя и перенаправляет на его страницу деталей.
+    """
     item = get_object_or_404(Item, pk=pk)
     request.user.items.remove(item)
     return detail(request, pk=pk, operation="remove", js_op="fgkjsdflkgjdkslfg")
 
 
 def gender_f(request, gender):
+    """
+    Устанавливает фильтр по полу в сессии.
+    """
     if "gender" not in request.session:
         request.session["gender"] = ""
     request.session["gender"] = gender
@@ -166,6 +187,9 @@ def gender_f(request, gender):
 
 
 def gender_index(request, gender):
+    """
+    Отображает товары, отфильтрованные по полу, на главной странице.
+    """
     if "gender" not in request.session:
         request.session["gender"] = ""
     request.session["gender"] = gender
@@ -206,6 +230,9 @@ def gender_index(request, gender):
 
 
 def gender_detail(request, gender, pk):
+    """
+    Отображает детали товара, отфильтрованные по полу.
+    """
     if "gender" not in request.session:
         request.session["gender"] = ""
     request.session["gender"] = gender
@@ -240,6 +267,9 @@ def gender_detail(request, gender, pk):
 
 
 def gender_detail_f(request, gender, pk):
+    """
+    Устанавливает фильтр по полу и перенаправляет на страницу деталей товара.
+    """
     if "gender" not in request.session:
         request.session["gender"] = ""
     request.session["gender"] = gender
@@ -248,12 +278,18 @@ def gender_detail_f(request, gender, pk):
 
 @login_required
 def delete(request):
+    """
+    Очищает все товары из корзины пользователя.
+    """
     request.user.items.clear()
     return redirect("item:basket")
 
 
 @login_required
 def purchase(request):
+    """
+    Создает покупку для товаров в корзине пользователя.
+    """
     purchase = Purchase.objects.create(
         user=request.user, telegram=request.POST["telegram"], price=0
     )
@@ -272,6 +308,9 @@ def purchase(request):
 
 @login_required
 def purchase_delete_admin(request, pk):
+    """
+    Удаляет покупку от имени администратора.
+    """
     if request.user.is_superuser:
         instance = Purchase.objects.get(id=pk)
         instance.delete()
@@ -280,6 +319,9 @@ def purchase_delete_admin(request, pk):
 
 @login_required
 def purchase_delete(request, pk):
+    """
+    Удаляет покупку по её первичному ключу.
+    """
     instance = Purchase.objects.get(id=pk)
     instance.delete()
 
@@ -288,6 +330,9 @@ def purchase_delete(request, pk):
 
 @login_required
 def all_purchases(request):
+    """
+    Отображает все покупки для администраторов.
+    """
     if request.user.is_superuser:
         return render(request, "item/purchases.html", {"purchases": Purchase.objects.all()})
     else:
@@ -296,6 +341,9 @@ def all_purchases(request):
 
 @login_required
 def new_category(request):
+    """
+    Создает новую категорию от имени администратора.
+    """
     if request.user.is_superuser:
         if request.method == "POST":
             form = NewCategoryForm(request.POST)
@@ -316,6 +364,9 @@ def new_category(request):
 
 @login_required
 def new_item(request):
+    """
+    Создает новый товар от имени администратора.
+    """
     if request.user.is_superuser:
         if request.method == "POST":
             print("123")
@@ -345,6 +396,9 @@ def new_item(request):
 
 @login_required
 def remove_item(request, pk):
+    """
+    Удаляет товар от имени администратора.
+    """
     if request.user.is_superuser:
         instance = Item.objects.get(id=pk)
         instance.delete()
@@ -353,6 +407,9 @@ def remove_item(request, pk):
 
 @login_required
 def remove_category(request, pk):
+    """
+    Удаляет категорию от имени администратора.
+    """
     if request.user.is_superuser:
         instance = Category.objects.get(id=pk)
         instance.delete()
@@ -361,6 +418,9 @@ def remove_category(request, pk):
 
 @login_required
 def edit_item(request, pk):
+    """
+    Редактирует существующий товар от имени администратора.
+    """
     if request.user.is_superuser:
         item = get_object_or_404(Item, pk=pk)
 
@@ -384,6 +444,9 @@ def edit_item(request, pk):
 
 @login_required
 def edit_category(request, pk):
+    """
+    Редактирует существующую категорию от имени администратора.
+    """
     if request.user.is_superuser:
         category = get_object_or_404(Category, pk=pk)
 
@@ -407,6 +470,9 @@ def edit_category(request, pk):
 
 @login_required
 def new_comment(request, pk):
+    """
+    Добавляет новый комментарий к товару.
+    """
     if request.method == "POST":
         item = Item.objects.get(pk=pk)
         form = NewCommentForm(request.POST)
@@ -491,6 +557,9 @@ def new_comment(request, pk):
 
 @login_required
 def delete_comment(request, pk_comment, pk_item):
+    """
+    Удаляет комментарий, сделанный пользователем.
+    """
     comment = Comment.objects.get(pk=pk_comment)
     if request.user == comment.user:
         comment.delete()
@@ -532,6 +601,9 @@ def delete_comment(request, pk_comment, pk_item):
 
 @login_required
 def edit_comment(request, pk_comment, pk_item):
+    """
+    Редактирует существующий комментарий, сделанный пользователем.
+    """
     if request.method == "POST":
         comment = Comment.objects.get(pk=pk_comment)
         form = NewCommentForm(request.POST, instance=comment)
@@ -566,5 +638,8 @@ def edit_comment(request, pk_comment, pk_item):
 
 @login_required
 def all_comments(request):
+    """
+    Отображает все комментарии, сделанные пользователем.
+    """
     items = Item.objects.filter(comments__user=request.user).distinct()
     return render(request, "item/comments.html", {"items": items, "asdad21213": True})
