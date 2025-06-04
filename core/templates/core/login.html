@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+<div class="my-6 mx-auto md:w-1/2 p-2 bg-gray-100 rounded-xl dark:bg-zinc-500 dark:text-white text-center transition-transform duration-300 transform hover:scale-105">
+    <h1 class="mt-2 mb-2 text-3xl">Log in</h1>
+    <hr class="mb-2 w-1/2 mx-auto">
+
+    <form method="post" action=".">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="inline-block mb-2">Username</label><br>
+            {{ form.username }}
+        </div>
+
+        <div class="mb-3">
+            <label class="inline-block mb-2">Password</label><br>
+            {{ form.password }}
+        </div>
+
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-2 bg-red-100 rounded-xl dark:text-black w-5/6 mx-auto mt-2">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <button class="w-1/2 mx-auto text-center m-2 py-2 px-4 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
+    </form>
+</div>
+{% endblock %}

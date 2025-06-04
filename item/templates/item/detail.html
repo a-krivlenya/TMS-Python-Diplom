@@ -1,0 +1,181 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ item.name }}{% endblock %}
+
+
+{% block content %}
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-7 mt-4" id="xcvxckjvl123">
+
+    <div class="md:ms-20">
+        <a href="{% url 'item:detail' item.id %}">
+            {% if item.gender == 'W'%}
+                {% if item.image.url %}
+                    <img src="{{ item.image.url }}" class="transition-transform duration-300 transform hover:scale-105 rounded-2xl object-contain w-full" id="detail-img">
+                {% endif %}
+            {% else %}
+                {% if item.image.url %}
+                    <img src="{{ item.image.url }}" class="transition-transform duration-300 transform hover:scale-105 rounded-2xl object-contain w-full" id="detail-img">
+                {% endif %}
+            {% endif %}
+        </a>
+    </div>
+
+    <div class="weasfdasf me-5 px-10 py-4 bg-gray-100 rounded-xl dark:bg-zinc-500 dark:text-whitemd:me-20 transition-transform duration-300 transform hover:scale-105" id="centered">
+        <hr class="dark:text-white">
+        <p class="text-xl md:text-3xl dark:text-red-50 mt-4">{{ item.name }} - {{ item.category }}</p> <br>
+        <p class="text-xl md:text-3xl dark:text-red-50">{{ item.description }}</p> <br>
+        <p class="text-xl md:text-3xl dark:text-red-50 mb-4"> {% if item.gender == 'W' %} For Woman {% else %} For Man {% endif %}</p> <br>
+        <p class="text-xl md:text-3xl dark:text-red-50"><strong>{{ item.price }}$ </strong></p>
+        <hr class="dark:text-white">
+    
+        {% if not request.user.is_authenticated %}
+            <a href="{% url 'item:add' item.id %}" class="block md:w-1/2 md:mx-auto text-center md:mt-6 mt-4 md:px-6 md:py-3 px-4 py-2 text-lg font-semibold bg-green-400 hover:bg-green-500 text-white rounded-xl">Add</a>
+        {% else %}
+            {% if in_basket %}
+            <a href="{% url 'item:remove_detail' item.id %}" class="block md:w-1/2 md:mx-auto text-center md:mt-6 mt-4 md:px-6 md:py-3 px-4 py-2 text-lg font-semibold bg-red-600 hover:bg-red-500 text-white rounded-xl">Remove</a>
+            {% else %}
+            <a href="{% url 'item:add' item.id %}" class="block md:w-1/2 md:mx-auto text-center md:mt-6 mt-4 md:px-6 md:py-3 px-4 py-2 text-lg font-semibold bg-green-400 hover:bg-green-500 text-white rounded-xl">Add</a>
+            {% endif %}
+            {% if not request.user.is_superuser %}
+                <a href="{% url 'conversation:new' item.id %}" class="block md:w-1/2 md:mx-auto text-center md:mt-6 mt-4 md:px-6 md:py-3 px-4 py-2 text-lg font-semibold bg-green-400 hover:bg-green-500 text-white rounded-xl">Contact admin</a>
+            {% endif %}
+
+        {% if operation == "add" %}
+        <div class="alert alert-primary mt-4 text-center md:w-1/2 mx-auto" id="id01" role="alert">
+            Добавлено
+        </div>
+        {%endif%}
+        {% if operation == "remove" %}
+        <div class="alert alert-danger mt-4 text-center md:w-1/2 mx-auto" id="id02" role="alert">
+            Удалено
+        </div> 
+        {%endif%}
+
+        {%endif%}
+
+        {% if request.user.is_superuser %}
+            <div class="grid md:grid-cols-2 grid-cols-1 gap-3 mt-4 w-3/4 mx-auto ">
+                <a href="{% url 'item:remove_item' item.id %}" class="block text-center py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl">Delete</a>
+                <a href="{% url 'item:edit_item' item.id %}" class="block  text-center py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl">Edit</a>
+            </div>
+        {%endif%}
+    </div>
+</div>
+
+<div class="transition-transform duration-300 transform hover:scale-105 m-5 asdfklasfdfgdfg">
+{% if request.user.is_authenticated %}
+<h1 class="mb-2 text-3xl mt-12  dark:text-white text-center" id="{{op}}">Add comment</h1>
+
+<form method="post" action="{% url 'item:new_comment'  item.id %}" enctype="multipart/form-data" class="asdzx222 mx-5 dark:text-white dark:bg-zinc-700 ">
+    {% csrf_token %}
+
+    <div class="space-y-4 text-center">
+        {{ form.as_p }}
+    </div>
+
+    {% if form.errors or form.non_field_errors %}
+        <div class=" mt-4 mb-3 p-6 bg-red-100 rounded-xl md:w-1/2 md:mx-auto dark:text-black">
+            {% for field in form %}
+                {{ field.errors }}
+            {% endfor %}
+
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+    <div class="md:w-1/2 md:mx-auto"><button class="block w-3/4 mt-4 md:w-1/2 mx-auto text-center py-2 px-2 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button></div>
+</form>
+{%endif%}
+</div>
+
+{% if item.comments.all %}
+<h1 class="mb-4 text-3xl mt-10 dark:text-white md:w-1/2 mx-auto text-center">Comments</h1>
+<div class="space-y-6 md:w-1/2 mx-auto">
+{% for comment in item.comments.all %}
+    {%if op %}
+    <div id="{{op}}" class="p-6 text-center {% if request.user == comment.user %} bg-sky-100 {% else %} bg-gray-100 dark:bg-zinc-500 dark:text-white{% endif %} rounded-xl">
+    {%else%}
+    <div class="p-6 text-center {% if request.user == comment.user %} bg-sky-100 {% else %} bg-gray-100 dark:bg-zinc-500 dark:text-white{% endif %} rounded-xl">
+    {%endif%}
+    <div {% if pk_comment == comment.id %} id="xdcfghjsdioufaos" {%endif%}>
+        <p class="text-sm block">{{ comment.created_at }} </p>
+    </div>
+        <div>
+            <div>
+                <p class="text-3xl block">{{comment.user.username}} </p>
+            </div>
+            <div>
+                <p class="mt-4 text-wrap text-xl">{{comment.description}}</p>
+            </div>
+        {% if request.user == comment.user %}
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-2 w-1/2 mx-auto mt-5">
+            <a href="{% url 'item:edit_comment'  comment.id item.id %}" class="text-center py-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-xl">edit</a>
+            <a href="{% url 'item:delete_comment'  comment.id item.id %}" class="text-center py-2 bg-indigo-400 hover:bg-indigo-500 text-white rounded-xl">delete</a>
+        </div>
+            {% if pk_comment == comment.id %}
+            <form method="post" action="{% url 'item:edit_comment' comment.id item.id %}" enctype="multipart/form-data" class="mt-4">
+                {% csrf_token %}
+            
+                <div class="space-y-4">
+                    {{ edit_form.as_p }}
+                </div>
+            
+                {% if edit_form.errors or edit_form.non_field_errors %}
+        <div class=" mt-4 mb-3 p-6 bg-red-100 rounded-xl md:w-1/2 mx-auto dark:text-black">
+            {% for field in edit_form %}
+                {{ field.errors }}
+            {% endfor %}
+
+            {{ edit_form.non_field_errors }}
+        </div>
+    {% endif %}
+            
+                <div class="md:w-1/2 md:mx-auto"><button class="mt-2 w-3/4 text-center block md:w-1/2 mx-auto py-2 px-2 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
+                </div>
+            </form>
+            {% endif %}
+        {%endif%}
+        </div>
+    </div>  
+{% endfor %}
+</div>
+{%endif%}
+
+<div id="target-element"></div>
+<div id="target-element"></div>
+
+{% if related_items %}
+<div class="mt-10 px-3 md:px-6 md:py-12 py-4 bg-gray-100 rounded-xl dark:bg-zinc-500 md:mx-20 transition-transform duration-300 transform hover:scale-105">
+    <h2 class="mb-4 mb-8 text-3xl text-center font-bold dark:text-white">Related</h2>
+
+    <div class="xcovixcopvi grid grid-cols-2 md:grid-cols-4 gap-8">
+        {% for item in related_items %}
+            <div class="transition-transform duration-300 transform hover:scale-105">
+                <a href="{% url 'item:detail' item.id %}">
+                    {% if item.gender == 'W'%}
+                        {% if item.image.url %}
+                            <img src="{{ item.image.url }}" class="zoom-image rounded-xl object-cover w-full md:h-96 h-60">
+                        {% endif %}
+                    {% else %}
+                        {% if item.image.url %}
+                            <img src="{{ item.image.url }}" class="zoom-image rounded-xl object-cover w-full md:h-96 h-60">
+                        {% endif %}
+                    {% endif %}
+                    <div class="dfkjsdlkf p-3 bg-white rounded-b-xl md:text-center">
+                            {% if item.gender == 'M'%}
+                            <h2 class="md:text-3xl text-xl text-blue-700 font-semibold">{{ item.name }}</h2>
+                            {% else %}
+                            <h2 class="md:text-3xl text-xl text-red-700 font-semibold">{{ item.name }}</h2>
+                            {% endif %}
+                        <strong><p class="text-xl md:text-3xl font-semibold">{{ item.price }}$</p></strong>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{%endif%}
+
+
+{% endblock %}

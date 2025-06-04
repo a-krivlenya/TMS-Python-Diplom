@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Conversation{% endblock %}
+
+{% block content %}
+<h1 class="mb-6 text-3xl mt-4 dark:text-white text-center" id="target-element">Conversation</h1>
+
+<div class="space-y-6 md:w-1/2 mx-auto">
+    {% for message in conversation.messages.all|slice:"::-1" %}
+        <div class="p-6 flex {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100 dark:bg-zinc-500 dark:text-white{% endif %} rounded-xl transition-transform duration-300 transform hover:scale-110">
+            <div>
+                <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
+                <p>{{ message.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="mx-10 fsdfujgsdofgui transition-transform duration-300 transform hover:scale-105 mt-10" id="{{fgjdfkljgdfklgjdf}}">
+    <form method="post" action="." class="dark:text-white">
+        {% csrf_token %}
+    
+        <div class="space-y-4 text-center">
+            {{ form.as_p }}
+        </div>
+    
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-6 bg-red-100 rounded-xl mx-auto w-1/2 dark:text-black mt-3 text-center">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+    
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <div class="md:mx-auto md:w-1/2">        <button class="block w-3/4 mt-3 md:w-1/2 mx-auto text-center py-2 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Send</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

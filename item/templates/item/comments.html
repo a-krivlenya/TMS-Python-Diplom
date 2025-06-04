@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Comments{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-6 text-3xl mt-4 dark:text-white text-center" id="target-element">Comments</h1>
+
+<div class="md:w-1/2 mx-auto ">
+    <div class="grid md:grid-cols-4 grid-cols-2 gap-x-6 mt-4">
+    {% for item in items %}
+        <div class="transition-transform duration-300 transform hover:scale-125">
+        <a href="{% url 'item:detail' item.id %}">
+            <div class="p-6 bg-gray-100 dark:bg-zinc-500 dark:text-white rounded-xl mb-4 text-center">
+                <div>
+                    <img src="{{ item.image.url }}" class="mx-auto rounded-xl">
+                </div>
+
+                <div class="mt-2">
+                    <strong><p class="">{{ item.name }}</p></strong>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+{%endblock%}

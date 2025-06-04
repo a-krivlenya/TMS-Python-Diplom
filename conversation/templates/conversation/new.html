@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}New conversation{% endblock %}
+
+{% block content %}
+<h1 class="mb-6 text-3xl mt-4 dark:text-white text-center" id='target-element'>New conversation</h1>
+
+<div class="mx-10 asdkaslzxc transition-transform duration-300 transform hover:scale-105">
+    <form method="post" action="." class="dark:text-white">
+        {% csrf_token %}
+    
+        <div class="space-y-4 text-center">
+            {{ form.as_p }}
+        </div>
+    
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-6 bg-red-100 rounded-xl mx-auto w-1/2 dark:text-black mt-3 text-center">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+    
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <div class="md:mx-auto md:w-1/2">        <button class="block w-3/4 mt-3 md:w-1/2 mx-auto text-center py-2 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Send</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

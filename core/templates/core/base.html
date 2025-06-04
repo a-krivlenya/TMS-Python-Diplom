@@ -1,0 +1,1269 @@
+{% load static %}
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+
+
+
+  <title>{% block title %}{% endblock %}</title>
+
+
+  <script>
+    window.onload = function () {
+      document.getElementById('sign_header').onclick = function () {
+        window.location.href = '/';
+      };
+      if ('{{asdad21213}}' === 'True') {
+        document.getElementById('target-element').removeAttribute('id')
+      } else {
+        const elements = document.querySelectorAll('[id="44fdfs"]');
+
+        // Пройтись по всем найденным элементам
+        elements.forEach((element, index) => {
+          element.href = element.href.replace('gender', 'gender_index')
+        });
+      }
+
+      if ('{{xzcqer1e4123}}' === 'True') {
+        document.getElementById('zxczxczxc').removeAttribute('id')
+      }
+
+
+      if ('{{asdzxczxczxc123}}' === 'True') {
+        const elements = document.querySelectorAll('[id="44fdfs"]');
+
+        // Пройтись по всем найденным элементам
+        elements.forEach((element, index) => {
+          element.href = element.href.replace('gender', 'gender_index')
+        });
+      }
+
+
+      if ('{{zxcasjdlqwikjeo1i23}}' === 'True') {
+        const elements = document.querySelectorAll('[id="44fdfs"]');
+
+        // Пройтись по всем найденным элементам
+        elements.forEach((element, index) => {
+          element.href = element.href.replace('gender', 'gender_detail')
+          element.href = element.href + '/' + '{{item.id}}'
+        });
+      }
+
+
+
+      if ('{{gdhsfguidfhgi}}' === 'True') {
+        document.getElementById('target-element').removeAttribute('id')
+      }
+
+      if ('{{asoifjasklfhjaklswof}}' === 'True') {
+        document.getElementById('comments').removeAttribute('id')
+      }
+
+      if ('{{pisya}}' === 'asdasfawfawdasd123dasdxzzxc') {
+        document.getElementById('comments').removeAttribute('id')
+      }
+
+
+
+      try {
+        document.getElementById('target-element').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+      try {
+        document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no commets section')
+      }
+
+      try {
+        document.getElementById('xdcfghjsdioufaos').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no asdafwawf as')
+      }
+
+      try {
+        document.getElementById('fjdfiojsdogi').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+
+      try {
+        document.getElementById('aczxczxczxczxc').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+      try {
+        document.getElementById('21312awsdasdasd').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+
+      try {
+        document.getElementById('s0ufsduf').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+
+      try {
+        document.getElementById('jgsdfiogjudorsg').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+      try {
+        document.getElementById('xjcvxzklczxkc').scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        console.log('no target element')
+      }
+
+
+      if ('{{show_tab}}' === 'False') {
+        document.getElementById('zxczxczxc').style.display = 'none'
+      }
+    };
+
+    function handleCredentialResponse(response) {
+      fetch("/google_one_tap_login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": "{{ csrf_token }}"
+        },
+        body: JSON.stringify({ credential: response.credential })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            window.location.href = data.redirect_url;
+          } else {
+            console.error('Error:', data.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+
+  </script>
+
+  <style>
+    body {
+      font-family: Comfortaa;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+      .zxczxczxce13 {
+        margin: 2px 2px;
+      }
+
+      .parallax-header {
+        position: relative;
+        height: 720px;
+        /* Высота заголовка */
+        display: flex;
+        align-items: flex-end;
+        /* Вертикальное центрирование текста */
+        justify-content: center;
+        /* Горизонтальное центрирование текста */
+        overflow: hidden;
+        color: white;
+        /* Цвет текста */
+        background-color: #333;
+        /* Фоновый цвет на случай отсутствия изображения */
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      .parallax-header a,
+      .parallax-header strong {
+        position: relative;
+        /* Для текстов оставайтесь на месте */
+        z-index: 1;
+        /* Поднятие текста над фоном */
+      }
+
+      .parallax-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("{% static 'images/6.png' %}");
+        /* Путь к вашему изображению */
+        background-size: cover;
+        background-attachment: fixed;
+        /* Эффект параллакса */
+        background-position: center;
+        z-index: 0;
+        /* Позади текста */
+      }
+
+      .parallax-header::before {
+        background-attachment: scroll;
+        /* Отключение параллакса на мобильных устройствах */
+      }
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        /* Разместить элементы вертикально */
+        align-items: center;
+        /* Центрировать элементы по горизонтали */
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        /* Прижать контейнер к нижнему краю родителя */
+        width: 100%;
+        /* Ширина контейнера на всю ширину родительского элемента */
+        text-align: center;
+        /* Центрирование текста внутри контейнера */
+        padding-bottom: 10px;
+        /* Добавить небольшой отступ снизу */
+      }
+
+      #nyashki,
+      #username {
+        color: white;
+        text-decoration: none;
+        margin: 10px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        font-size: 30px;
+      }
+
+      #username {
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
+
+
+
+
+    @media (min-width: 768px) {
+      #sign_header {
+        background-attachment: fixed;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://sneakers.by/image/cache/wp/gj/sneakers-pics/101749/krossovki-adidas-ozweego-og-id9459-1-695x695.webp"),
+          url("https://sneakers.by/image/cache/wp/gj/sneakers-pics/29425/krossovki-adidas-response-cl-gz1562-5-695x695.webp");
+        background-size: 50% 100%;
+        /* Каждое изображение занимает половину ширины */
+        background-position: left top, right top;
+        /* Первая картинка слева, вторая справа */
+        background-repeat: no-repeat;
+      }
+
+
+      #nyashki,
+      #username {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        margin: 10px;
+        text-align: center;
+        padding: 40px 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        font-size: 50px;
+      }
+
+      #username {
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }
+
+    .zoom-image {
+      transition: transform 0.2s ease;
+      /* Плавный переход для увеличения изображения */
+
+    }
+
+    .zoom-image:hover {
+      transform: scale(1.1);
+      /* Увеличиваем изображение на 10% при наведении */
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      /* ширина полосы прокрутки */
+      height: 5px;
+      /* высота полосы прокрутки (для горизонтальной) */
+    }
+
+    /* Фон полосы прокрутки */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    /* Кнопки прокрутки */
+    ::-webkit-scrollbar-button {
+      display: none;
+      /* скрыть кнопки прокрутки */
+    }
+
+    /* Сам ползунок (то, что движется) */
+    ::-webkit-scrollbar-thumb {
+      background-color: rgb(220 38 38);
+      border-radius: 10px;
+    }
+
+    /* Ползунок при наведении */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgb(91 33 182);
+    }
+  </style>
+
+  <script>
+    if ('{{xzcqer1e4123}}' !== 'True') {
+      document.addEventListener('DOMContentLoaded', function () {
+        const header = document.getElementById('zxczxczxc');
+        const target = document.getElementById('xcvxckjvl123');
+
+        function checkVisibility() {
+          const targetRect = target.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          if (targetRect.top <= windowHeight) {
+            header.style.display = 'block'; // Показываем заголовок
+          } else {
+            header.style.display = 'none'; // Скрываем заголовок
+          }
+        }
+
+        // Проверяем видимость при прокрутке
+        window.addEventListener('scroll', checkVisibility);
+
+        // Проверяем видимость при загрузке страницы
+        checkVisibility();
+      });
+    }
+  </script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asfafzxcvzd23123');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('mx-5');
+          element.classList.add('mx-0');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mx-0');
+          element.classList.add('mx-5');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.czxjcklzxjckl123');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('mx-5');
+          element.classList.add('mx-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mx-2');
+          element.classList.add('mx-5');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      try {
+        const element = document.querySelector('.weasfdasf');
+
+        // Определяем медиазапрос
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+        // Функция для обновления классов в зависимости от медиазапроса
+        function handleResize(event) {
+          if (event.matches) {
+            // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+            element.classList.remove('me-5');
+            element.classList.add('me-0');
+          } else {
+            // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+            element.classList.remove('me-0');
+            element.classList.add('me-5');
+          }
+        }
+
+        // Обрабатываем текущий размер экрана
+        handleResize(mediaQuery);
+
+        // Добавляем слушатель для изменений медиазапроса
+        mediaQuery.addEventListener('change', handleResize);
+      } catch {
+
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asdasdzxczxc123');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('gap-4');
+          element.classList.add('gap-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('gap-2');
+          element.classList.add('gap-4');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.xcjvxckljvlk');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('gap-4');
+          element.classList.add('gap-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('gap-2');
+          element.classList.add('gap-4');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.blckvlvjvv');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('gap-8');
+          element.classList.add('gap-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('gap-2');
+          element.classList.add('gap-8');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.xvxcvxcvkl');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('mt-5');
+          element.classList.add('mt-3');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mt-3');
+          element.classList.add('mt-5');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.xcvxckjvl123');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('mt-5');
+          element.classList.add('mt-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mt-2');
+          element.classList.add('mt-5');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asfafzxcvzd23123');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('mt-20');
+          element.classList.add('mt-4');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mt-4');
+          element.classList.add('mt-20');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.ugdfiougiodf');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('p-3');
+          element.classList.add('p-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('p-2');
+          element.classList.add('p-3');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.xcovixcopvi');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.remove('gap-8');
+          element.classList.add('gap-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('gap-2');
+          element.classList.add('gap-8');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.gdsfujgdkfghj');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          element.classList.add('mb-1');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('mb-1');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const elements = document.querySelectorAll('.cvkxljbxcljkvb');
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+          elements.forEach((element, index) => {
+            element.classList.remove('p-3');
+            element.classList.add('p-1');
+          });
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+          element.classList.remove('p-1');
+          element.classList.add('p-3');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const elements = document.querySelectorAll('.dfkjsdlkf');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          elements.forEach((element, index) => {
+            element.classList.remove('p-3');
+            element.classList.add('p-1');
+          });
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          elements.forEach((element, index) => {
+            element.classList.remove('p-1');
+            element.classList.add('p-3');
+          });
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asdfklasfdfgdfg');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.classList.remove('m-5');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          element.classList.add('m-5');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asdzx222');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.classList.remove('mx-5');
+          element.classList.add('mx-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          element.classList.add('mx-5');
+          element.classList.remove('mx-2');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asdkaslzxc');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.classList.remove('mx-10');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          element.classList.add('mx-10');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.fsdfujgsdofgui');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.classList.remove('mx-10');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          element.classList.add('mx-10');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.asdfghjsdkjllfhl');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.style.display = 'none';
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+          element.style.display = 'block';
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.sdfjksdlkfjlk');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+
+          element.classList.remove('gap-8');
+          element.classList.add('gap-2');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+
+          element.classList.remove('gap-2');
+          element.classList.add('gap-8');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const elements = document.querySelectorAll('.sdlfksdzxczxc');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+
+
+          elements.forEach((element, index) => {
+            element.classList.remove('gap-8');
+            element.classList.add('gap-2');
+          });
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+
+          elements.forEach((element, index) => {
+            element.classList.remove('gap-2');
+            element.classList.add('gap-8');
+          });
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Получаем элемент, на котором будем изменять классы
+      const element = document.querySelector('.zxkclzxlasdjaskld');
+
+
+      // Определяем медиазапрос
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      // Функция для обновления классов в зависимости от медиазапроса
+      function handleResize(event) {
+        if (event.matches) {
+          // Если ширина экрана меньше или равна 768px, добавляем класс mx-2 и удаляем mx-5
+
+          element.classList.remove('transition-transform');
+          element.classList.remove('duration-300');
+          element.classList.remove('transform');
+          element.classList.remove('hover:scale-110');
+        } else {
+          // Если ширина экрана больше 768px, добавляем класс mx-5 и удаляем mx-2
+
+
+          element.classList.add('transition-transform');
+          element.classList.add('duration-300');
+          element.classList.add('transform');
+          element.classList.add('hover:scale-110');
+        }
+      }
+
+      // Обрабатываем текущий размер экрана
+      handleResize(mediaQuery);
+
+      // Добавляем слушатель для изменений медиазапроса
+      mediaQuery.addEventListener('change', handleResize);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (localStorage.getItem('theme') !== 'auto') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          },
+          darkMode: 'class',
+        }
+      }
+      if (localStorage.getItem('theme') === 'dark') {
+        document.querySelector('html').classList.add("dark")
+      }
+    });
+
+
+    function sdofgjsdklfgj123() {
+      console.log(localStorage.getItem('theme'))
+      if (localStorage.getItem('theme') === 'auto') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          },
+          darkMode: 'class',
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches === false) {
+          document.querySelector('html').classList.add('dark')
+          localStorage.setItem('theme', 'dark')
+        } else {
+          localStorage.setItem('theme', 'light')
+        }
+
+      } else {
+
+        if (document.querySelector('html').classList.contains('dark')) {
+          document.querySelector('html').classList.remove('dark')
+          localStorage.setItem('theme', 'light')
+        } else {
+          document.querySelector('html').classList.add('dark')
+          localStorage.setItem('theme', 'dark')
+        }
+      }
+    }
+
+  </script>
+
+
+</head>
+
+
+
+<body class="dark:bg-zinc-700" id="target-element">
+
+  <header class="text-center parallax-header" id="sign_header" style="cursor: pointer;">
+    <div class="text-container">
+      {% if request.user.is_authenticated %}
+      <strong id="username" class="md:text-3xl text-3xl font-bold">{{request.user.username}}</strong>
+      {% endif %}
+      <a href="/" id="nyashki" class="md:text-3xl text-3xl font-bold">Кроссовки By</a>
+    </div>
+  </header>
+
+  {% if not request.user.is_authenticated %}
+  <header class="sticky top-2 z-50 transition-transform duration-300 transform hover:scale-105 mx-5 czxjcklzxjckl123">
+    <div class="xvxcvxcvkl grid grid-cols-4 gap-2 px-2 md:w-1/2 md:mx-auto mb-3 mt-5" id="{{zxcasdawd}}">
+      <a href="{% url 'core:signup' %}"
+        class="text-center px-2 py-2 md:text-2xl text-lg bg-orange-400 text-white rounded-xl hover:bg-orange-500">Sign
+        up</a>
+      <a href="{% url 'core:login' %}"
+        class="text-center px-2 py-2 md:text-2xl  text-lg bg-green-400 text-white rounded-xl hover:bg-green-500">Log
+        in</a>
+    </div>
+  </header>
+  {% endif %}
+
+  {% if request.user.is_authenticated %}
+  <div
+    class="grid grid-cols-3 gap-2 mt-2 px-2 md:w-1/2 md:mx-auto mb-3 mt-5 transition-transform duration-300 transform hover:scale-105"
+    id="{{zxc12qwiehjqwaiode}}">
+    <a href="{% url 'item:all_comments' %}"
+      class="block text-center px-2 py-2 text-lg md:text-xl  bg-indigo-300 text-cyan-950 hover:text-white rounded-xl hover:bg-indigo-400"
+      style="position:relative;">Comments {{ request.user.comments.all | length }}</a>
+    <a href="{% url 'conversation:inbox' %}"
+      class="block text-center px-2 py-2 text-lg md:text-xl bg-indigo-300 text-cyan-950 hover:text-white rounded-xl hover:bg-indigo-400">Inbox
+      {{ request.user.conversations.all | length }}</a>
+    <a href="{% url 'core:logout' %}"
+      class="block text-center px-2 py-2 text-lg md:text-xl bg-indigo-300 text-cyan-950 hover:text-white rounded-xl hover:bg-indigo-400">Logout</a>
+  </div>
+  {% endif %}
+
+  {% if request.user.is_superuser %}
+  <div
+    class="grid grid-cols-3 gap-2 mt-2 px-2 md:mx-auto md:w-1/2 transition-transform duration-300 transform hover:scale-105">
+    <a href="{% url 'item:new_category' %}"
+      class="px-2 py-2 text-lg  bg-red-500 text-white text-center rounded-xl hover:bg-red-700">New category</a>
+    <a href="{% url 'item:new_item' %}"
+      class="px-2 py-2 text-lg  bg-red-500 text-white text-center rounded-xl hover:bg-red-700">New item</a>
+    <a href="{% url 'item:all_purchases' %}"
+      class="px-2 py-2 text-lg  bg-red-500 text-white text-center rounded-xl hover:bg-red-700">All purchases</a>
+  </div>
+  {%endif%}
+
+
+
+
+  <div class="xcvxckjvl123 px-2 mt-5">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+
+  <header class="sticky bottom-2 z-50 mt-5 md:w-1/2 mx-auto" id="zxczxczxc" style="display: none;">
+    <div class="asdasdzxczxc123 grid md:grid-cols-2 grid-cols-1 gap-4 px-3">
+      <div class="grid grid-cols-3 gap-0 px-1 transition-transform duration-300 transform hover:scale-110">
+        <a class="text-center md:mb-3 md:px-6 md:py-3 py-2 px-2 md:text-2xl text-lg  text-white {% if gender == 'W' %}  bg-indigo-600  {%else%} bg-indigo-400 hover:bg-indigo-500 {%endif%} rounded-s-xl"
+          href="{% url 'item:gender' 'W' %}" id="44fdfs">woman</a>
+        <a class="text-center md:mb-3  md:px-6 md:py-3 py-2 px-2 md:text-2xl text-lg  text-white {% if gender == 'ALL' %} bg-indigo-600 {%else%} bg-indigo-400 hover:bg-indigo-500  {%endif%}"
+          href="{% url 'item:gender' 'ALL'%}" id="44fdfs">all </a>
+        <a class="text-center md:mb-3  md:px-6 md:py-3 py-2 px-2 md:text-2xl text-lg  text-white {% if gender == 'M' %}  bg-indigo-600  {%else%} bg-indigo-400 hover:bg-indigo-500  {%endif%}  rounded-e-xl"
+          href="{% url 'item:gender' 'M' %}" id="44fdfs">man</a>
+      </div>
+      <div class="grid grid-cols-5 gap-2 gdsfujgdkfghj">
+        <button onclick="sdofgjsdklfgj123()"
+          class="zxkclzxlasdjaskld col-span-1 font-bold transition-transform duration-300 transform hover:scale-110 text-center md:mb-3 md:px-6 md:py-3 py-2 px-2 md:text-2xl text-lg text-white  bg-slate-950 rounded-xl">
+          <div class="grid grid-cols-2 gap-3 text-center text-white font-bold">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path class="fill-white"
+                d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z" />
+              <path class="fill-white" d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z" />
+            </svg>
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path class="fill-white"
+                d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z" />
+              <path class="fill-white"
+                d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z" />
+            </svg>
+          </div>
+
+        </button>
+        <a class="col-span-4 font-bold transition-transform duration-300 transform hover:scale-110 text-center md:mb-3 md:px-6 md:py-3 py-2 px-2 md:text-2xl text-lg text-white  bg-green-400 rounded-xl"
+          href="{% url 'item:basket' %}">Корзина 🧺 {% if request.user.items.all|length != 0 %}
+          {{request.user.items.all|length}}
+          {%endif%}</a>
+      </div>
+    </div>
+  </header>
+
+  <!--Footer container-->
+  <hr class="dark:text-white m-5">
+  <footer class="flex flex-col items-center text-center text-surface dark:bg-zinc-700 dark:text-white">
+    <div class="container mt-2">
+      <!-- Social media icons container -->
+      <div class="mb-2 flex justify-center space-x-2">
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="[&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+            </svg>
+          </span>
+        </a>
+
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+            </svg>
+          </span>
+        </a>
+
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 488 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
+            </svg>
+          </span>
+        </a>
+
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg>
+          </span>
+        </a>
+
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+            </svg>
+          </span>
+        </a>
+
+        <a href="#!" type="button"
+          class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+          data-twe-ripple-init>
+          <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 496 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!--Copyright section-->
+    <div class="w-full p-4 text-center">
+      <a href="#">Кроссовки By</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

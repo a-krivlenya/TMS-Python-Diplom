@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background: linear-gradient(to bottom right, #ffffff, #e0e0e0); /* Gradient background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .item {
+            box-sizing: border-box;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        .item:hover img {
+            transform: scale(1.1);
+        }
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .item p {
+            margin: 0;
+            font-size: 1em;
+            color: #555;
+        }
+        header {
+            background: linear-gradient(to right, #2c3e50, #34495e); /* Темные оттенки серого и синего */
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for header */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for footer */
+        }
+        .detail {
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        💀💀💀⚰️⚰️⚰️⚰️⚰️⚰️⚰️⚰️⚰️🕷️🕷️🕷️Вы удалили заказ(((🕷️🕷️🕷️🕷️🕷️🕷️🐈‍⬛🐈‍⬛🐈‍⬛🐈‍⬛⚰️⚰️⚰️
+    </header>
+    <div class="container">
+        {% for item in purchase.items.all %}
+        <div class="item">
+            <img src="https://shutsuensha.pythonanywhere.com{{item.image.url}}" alt="Item Image">
+            <p>{{ item.price }}$</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="detail">
+        Total: <b>{{purchase.price}}$</b>
+        <br>
+        Date: {{purchase.created_at}}
+        <br>
+        Your email: {{purchase.user.email}}
+        <br>
+        Your Telegram: {{purchase.telegram}}
+    </div>
+    <footer>
+        Thank you for shopping with us!
+    </footer>
+</body>
+</html>
